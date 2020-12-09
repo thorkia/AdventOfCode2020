@@ -2,15 +2,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>721f10d7-2d26-4b2e-880a-831d2e09e59d</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>Day3.py</StartupFile>
+    <ProjectGuid>c330d820-166b-4eda-a50f-7097ae09b24b</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>Day8.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Day3</Name>
-    <RootNamespace>Day3</RootNamespace>
+    <Name>Day08</Name>
+    <RootNamespace>Day8</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Day3.py" />
+    <Compile Include="Day8.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="test.txt" />

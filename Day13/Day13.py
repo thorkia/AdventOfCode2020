@@ -52,23 +52,35 @@ def all_diff_equalindex(timestamp:int, buses:List[Tuple[int,int]]) -> bool:
     return True
 
 
+def check_bus(timestamp: int, realbus: Tuple[int,int]) -> bool:
+    #see if the timestamp plus the the bus index == 0  if it does, the bus arrives at exactly that time
+    remainder = (timestamp+realbus[1]) % realbus[0]
+
+    return remainder == 0    
+
 def run_part2(filename: str):
     (arrivaltime, buses) = load_instructions(filename)    
     timestamp = -int(buses[0])
     allmet = False
 
     realbuses = [ (int(b),buses.index(b)) for b in buses if b.isnumeric()]
-    increment = max( [int(b) for b in buses if b.isnumeric()])
-
-    while allmet == False:
-        timestamp+=realbuses[0][0] # bus 0 has to arrive at the right time
-        allmet = all_diff_equalindex(timestamp,realbuses)
     
+    increment = realbuses[0][0]
+    index = 1
+    while index < len(realbuses):
+        timestamp+=increment # bus 0 has to arrive at the right time
+
+        if check_bus(timestamp, realbuses[index]) == True:
+            increment *= realbuses[index][0]
+            index+=1
+            
+        
+    print(all_diff_equalindex(timestamp,realbuses))
     print(timestamp)
 
 
-filename='test.txt'
-#filename='input.txt'
+#filename='test.txt'
+filename='input.txt'
 
 run_part1(filename)
 run_part2(filename)
